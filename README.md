@@ -11,6 +11,13 @@ storage, controllers) is provided by the [wii-recomp runtime](https://github.com
 
 ## Status
 
+> [!NOTE]
+> **This is a beta.** The translation is done and the game starts and plays, but nobody has
+> played it from start to finish yet. Please try it, and if something breaks, stutters or
+> looks wrong, [open an issue](https://github.com/SirWinstonChurchillTheFirst/super-mario-galaxy-2-native/issues)
+> and say where in the game it happened, on which system and graphics card, and attach the
+> console's output if you can.
+
 Tested with **SB4P01** (Europe (PAL), revision 0).
 
 Creates a file and plays the first level at 60 fps, no graphics errors seen. Tested on Windows 11 by playing into the first real scene; on the Linux mini PC through the menus. Nothing here says the game is playable to the end.
@@ -20,7 +27,7 @@ or revisions may work but are untested.
 
 Known limits of the runtime, for every game: the Wii Remote's speaker isn't played; real Wii
 Remotes connect on Linux only (Windows uses keyboard, mouse and SDL3 controllers); on the
-Linux mini PC, 2 of about 45 starts showed no picture and needed starting again.
+Linux mini PC, 3 of about 100 starts showed no picture and needed starting again.
 
 ## Benchmark
 
@@ -28,8 +35,8 @@ The same 90-second run on both machines: started from the disc, the same scripte
 
 | Machine | Average fps | 1 % low fps | Busy | Frames over 20 ms |
 |---|---|---|---|---|
-| High budget: Windows 11, Intel Core i7-13700KF, NVIDIA GeForce RTX 3070 Ti, 32 GB | 59.3 | 25.2 | 20.8 % | 0.55 % |
-| Low budget: Batocera Linux mini PC (HP), AMD Ryzen 3 PRO 4350GE with Radeon Vega 6 graphics, 8 GB | 60.0 | 46.3 | 32.7 % | 12.73 % |
+| High budget: Windows 11, Intel Core i7-13700KF, NVIDIA GeForce RTX 3070 Ti, 32 GB | 59.4 | 28.6 | 18.8 % | 0.07 % |
+| Low budget: Batocera Linux mini PC (HP), AMD Ryzen 3 PRO 4350GE with Radeon Vega 6 graphics, 8 GB | 59.4 | 28.6 | 34.5 % | 0.02 % |
 
 On the mini PC frame times jitter by a few milliseconds around 16.7 ms (a 20.5 ms frame followed by a 13 ms one), with about 10 ms of every frame to spare, so the frames over 20 ms are uneven pacing rather than missing speed.
 
@@ -69,7 +76,7 @@ Wii Remote and Nunchuk (the default): mouse points, Enter is A, Backspace is B; 
 ## How it's made
 
 - Runtime: [https://github.com/SirWinstonChurchillTheFirst/wii-recomp](https://github.com/SirWinstonChurchillTheFirst/wii-recomp) (branch `windows-port`, tested at
-  `441bd724afc3`), a fork of [Zontex/wii-recomp](https://github.com/Zontex/wii-recomp) with
+  `bd252d728263`), a fork of [Zontex/wii-recomp](https://github.com/Zontex/wii-recomp) with
   Windows support and the fixes this game needed. GPL-3.0-or-later.
 - Hardware behaviour follows [Dolphin](https://dolphin-emu.org) where noted in the runtime's
   CREDITS.md.
